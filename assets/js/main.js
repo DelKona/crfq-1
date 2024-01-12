@@ -4,6 +4,10 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
   "use strict";
 
@@ -16,6 +20,20 @@ document.addEventListener('DOMContentLoaded', () => {
       preloader.remove();
     });
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   /**
    * Sticky Header on Scroll
@@ -289,4 +307,43 @@ document.addEventListener('DOMContentLoaded', () => {
     aos_init();
   });
 
+
+
+
+  (function() {
+    "use strict";
+   /**
+     * Easy selector helper function
+     */
+    const select = (el, all = false) => {
+      el = el.trim()
+      if (all) {
+        return [...document.querySelectorAll(el)]
+      } else {
+        return document.querySelector(el)
+      }
+    }
+
+    
+   /**
+     * Hero carousel indicators
+     */
+    let heroCarouselIndicators = select("#hero-carousel-indicators")
+    let heroCarouselItems = select('#heroCarousel .carousel-item', true)
+  
+    heroCarouselItems.forEach((item, index) => {
+      (index === 0) ?
+      heroCarouselIndicators.innerHTML += "<li data-bs-target='#heroCarousel' data-bs-slide-to='" + index + "' class='active'></li>":
+        heroCarouselIndicators.innerHTML += "<li data-bs-target='#heroCarousel' data-bs-slide-to='" + index + "'></li>"
+    });
+   })()
+  
+
+
+
+
+
+
 });
+
+
